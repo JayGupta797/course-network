@@ -91,14 +91,13 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
       links: filteredLinks
     })
     .nodeLabel('id')
-    .linkDirectionalParticles(2)
     .onNodeClick(node => {
         toggleNodeHighlight(node);
         zoomIntoNode(node);
     })
     .autoPauseRedraw(false) // keep redrawing after the engine has stopped
     .linkWidth(link => highlightLinks.has(link) ? 5 : 1)
-    .linkDirectionalParticles(4)
+    .linkDirectionalParticles(2)
     .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 4 : 0)
     .nodeCanvasObjectMode(node => highlightNodes.has(node) ? 'before' : undefined)
     .nodeCanvasObject((node, ctx) => {
@@ -183,6 +182,7 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
       const colors = generateUniqueColors(uniqueGroups.length);
       const groupColors = {};
 
+      // Run through unique groups
       uniqueGroups.forEach((group, index) => {
 
         // Store color
@@ -191,19 +191,20 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
         // Create cells
         const row = document.createElement("tr");
         const groupCell = document.createElement("td");
+        const hexCell = document.createElement("td");
         const colorCell = document.createElement("td");
 
         // Add content
-        groupCell.textContent = `Group ${group}`;
+        groupCell.textContent = `${group}`;
+        hexCell.textContent = `${colors[index]}`;
         colorCell.style.backgroundColor = colors[index] || 'black';
 
+        // Append children
         row.appendChild(groupCell);
+        row.appendChild(hexCell);
         row.appendChild(colorCell);
         legendBody.appendChild(row);
       });
-
-      // Append the legend table to the legend container
-      // legendContainer.appendChild(legendTable);
 
       // Add node colors
       nodes.forEach(node => node.color = groupColors[node.group])
@@ -346,7 +347,6 @@ function sortTableBy(column) {
     tableBody.innerHTML = '';
 
     // Append the sorted rows to the table
-    // tableBody.appendChild(rows[0]); // Append the first row back
     rows.forEach(row => tableBody.appendChild(row));
 }
 

@@ -33,7 +33,7 @@
                 <div id="content1">
                     <!-- Content for Tab 1 goes here -->
                     <h2>Select A Course</h2>
-                    <p>Inspect a course's prerequisites by clicking on a node in the graph or selecting one below. Courses without at least 1 incoming or outgoing link are omitted.</p>
+                    <p>Inspect a course's prerequisites by clicking on a node in the graph or selecting one below. Courses without 1 or more incoming or outgoing links are omitted.</p>
                     <input type="text" id="searchInput" placeholder="Search courses">
                     <div class="table-container">
                         <table id="nodeTable">
@@ -81,12 +81,13 @@
                 <div id="content2" style="display: none;">
                     <!-- Content for Tab 2 goes here -->
                     <h2>Academic Groups</h2>
-                    <p>Coursed are colored by their Academic Group.</p>
+                    <p>Courses are colored by their Academic Group.</p>
                     <div class="legend-container">
                         <table id="legendTable">
                             <thead>
                                 <tr>
-                                    <th>Group Name</th>
+                                    <th>Academic Group</th>
+                                    <th>HSL</th>
                                     <th>Color</th>
                                 </tr>
                             </thead>
