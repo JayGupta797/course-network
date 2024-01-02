@@ -1,0 +1,154 @@
+/* Global Styles */
+:root {
+    --bg-color: #f0f0f0;
+    --sidebar-bg-color: #fafafa;
+    --link-hover-color: #2757C3;
+    --link-inactive-color: #0d6efd;
+    --text-color: #333;
+    --border-color: #ccc;
+    --accent: #36454F;
+}
+
+body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    background-color: var(--bg-color); 
+}
+
+h2 {
+    border-bottom: 1px solid var(--border-color); /* Gray underline */
+    margin: 0;
+}
+
+.mast {
+    display: flex;
+}
+
+/* Main Content Styles */
+#main-content {
+    height: 100vh;
+    width: 70vw;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Sidebar Styles */
+#sidebar {
+    display: grid;
+    grid-template-areas: "navbar" "side-content";
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    width: 30vw;
+    background-color: #fff;
+    color: var(--text-color);
+    border-right: 1px solid var(--border-color);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#navbar {
+    grid-area: navbar;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tabs Styles */
+#tabs {
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
+}
+
+#tab1, #tab2 {
+    color: var(--link-inactive-color);
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 3px 3px 0 0;
+    margin-right: 0;
+}
+
+#tab1.active-tab, #tab2.active-tab {
+    color: var(--text-color);
+    background-color: var(--sidebar-bg-color);
+    border-bottom: 1px solid var(--sidebar-bg-color);
+}
+
+#tab1:hover, #tab2:hover {
+    color: var(--link-hover-color);
+}
+
+#tab1.active-tab:hover, #tab2.active-tab:hover {
+    color: var(--text-color);
+}
+
+#tab3 {
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+    pointer-events: none; /* Make the third tab not clickable */
+}
+
+/* Side Content Styles */
+#side-content {
+    background-color: var(--sidebar-bg-color);
+    grid-area: side-content;
+    padding: 20px;
+}
+
+#content {
+    padding: 16px;
+}
+
+/* Table Container */
+.table-container {
+    /* Set a fixed height and enable vertical scrolling */
+    max-height: 60vh; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    font-weight: 300;
+}
+
+th {
+    background-color: var(--accent);
+    cursor: pointer;
+    color: white;
+    top: 0;
+    position: sticky;
+}
+
+td {
+    border-top: 1px solid #ddd;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.ascending svg {
+    transform: rotate(180deg);
+}
+
+.descending svg {
+    /* style */
+}
+
+
+
+
+

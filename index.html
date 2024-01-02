@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Prerequisite Network </title>
+    
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Load Directed Graph -->
+    <script src="https://unpkg.com/force-graph@1.43.4/dist/force-graph.min.js"></script>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+    <div class="mast">
+        <div id="sidebar">
+            <div id="navbar">
+                <div id="tabs">
+                    <div id="tab1" onclick="changeContent('content1')">Course Inspector</div>
+                    <div id="tab2" onclick="changeContent('content2')">Legend</div>
+                    <div id="tab3" onclick="changeContent('content3')" title="This tab is not clickable"></div>
+                </div>
+            </div>
+
+            <div id="side-content">
+                <div id="content1">
+                    <!-- Content for Tab 1 goes here -->
+                    <h2>Select A Course</h2>
+                    <p>Inspect a course's prerequisites by clicking on a node in the graph or selecting one below. Courses without at least 1 incoming or outgoing link are omitted.</p>
+                    <input type="text" id="searchInput" placeholder="Search courses">
+                    <div class="table-container">
+                        <table id="nodeTable">
+                            <thead>
+                                <tr>
+                                    <th> 
+                                        <button class="ascending" id="name-sort-icon" onclick="sortTableBy('name')">
+                                            <svg width="10" height="10">
+                                                <polygon points="5,1 9,9 1,9" style="fill:var(--accent)" />
+                                            </svg>
+                                        </button>
+                                        Name
+                                    </th>
+                                    <th>
+                                        <button class="ascending" id="incoming-sort-icon" onclick="sortTableBy('incoming')">
+                                            <svg width="10" height="10">
+                                                <polygon points="5,1 9,9 1,9" style="fill:var(--accent)" />
+                                            </svg>
+                                        </button>
+                                        In
+                                    </th>
+                                    <th>
+                                        <button class="ascending" id="outgoing-sort-icon" onclick="sortTableBy('outgoing')">
+                                            <svg width="10" height="10">
+                                                <polygon points="5,1 9,9 1,9" style="fill:var(--accent)" />
+                                            </svg>
+                                        </button>
+                                        Out
+                                    </th>
+                                    <th>
+                                        <button class="ascending" id="group-sort-icon" onclick="sortTableBy('group')">
+                                            <svg width="10" height="10">
+                                                <polygon points="5,1 9,9 1,9" style="fill:var(--accent)" />
+                                            </svg>
+                                        </button>
+                                        Group
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="TableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="content2" style="display: none;">
+                    <!-- Content for Tab 2 goes here -->
+                    <h2>Academic Groups</h2>
+                    <p>Coursed are colored by their Academic Group.</p>
+                    <div class="legend-container">
+                        <table id="legendTable">
+                            <thead>
+                                <tr>
+                                    <th>Group Name</th>
+                                    <th>Color</th>
+                                </tr>
+                            </thead>
+                            <tbody id="LegendBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="graph"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
