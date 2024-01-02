@@ -28,7 +28,7 @@ function changeContent(tab) {
     }
 }
 
-fetch('https://raw.githubusercontent.com/JayGupta797/dump/main/graph.json').then(res => res.json()).then(data => {
+fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.json').then(res => res.json()).then(data => {
 
   // Easily access nodes and links
   // const filteredNodes = data.nodes
