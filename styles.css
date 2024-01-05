@@ -44,6 +44,7 @@ h2 {
     color: var(--text-color);
     border-right: 1px solid var(--border-color);
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 #navbar {
@@ -102,9 +103,9 @@ h2 {
 }
 
 /* Table Container */
+
 .table-container {
-    /* Set a fixed height and enable vertical scrolling */
-    max-height: 60vh; /* Adjust the height as needed */
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -113,6 +114,8 @@ table {
     border: 1px solid #ddd;
     border-spacing: 0;
     border-collapse: separate;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th, td {
@@ -122,11 +125,11 @@ th, td {
 }
 
 th {
-    background-color: var(--accent);
+    background: var(--accent);
     cursor: pointer;
     color: white;
     top: 0;
-    position: sticky;
+    position: sticky; 
 }
 
 td {
@@ -145,7 +148,7 @@ input {
 }
 
 .descending svg {
-    /* style */
+    /* insert style here */
 }
 
 

@@ -96,7 +96,7 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
         zoomIntoNode(node);
     })
     .autoPauseRedraw(false) // keep redrawing after the engine has stopped
-    .linkWidth(link => highlightLinks.has(link) ? 5 : 1)
+    .linkWidth(link => highlightLinks.has(link) ? 4 : 1)
     .linkDirectionalParticles(2)
     .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 4 : 0)
     .nodeCanvasObjectMode(node => highlightNodes.has(node) ? 'before' : undefined)
