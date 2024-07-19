@@ -17,7 +17,8 @@ body {
 }
 
 h2 {
-    border-bottom: 1px solid var(--border-color); /* Gray underline */
+    /* Gray underline */
+    border-bottom: 1px solid var(--border-color);
     margin: 0;
 }
 

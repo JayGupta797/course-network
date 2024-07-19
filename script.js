@@ -1,5 +1,3 @@
-// script.js
-
 // Function to set the initial state of tabs upon page load
 function setInitialTabsState() {
     document.getElementById('content1').style.display = 'block';
@@ -95,7 +93,7 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
         toggleNodeHighlight(node);
         zoomIntoNode(node);
     })
-    .autoPauseRedraw(false) // keep redrawing after the engine has stopped
+    .autoPauseRedraw(false)
     .linkWidth(link => highlightLinks.has(link) ? 4 : 1)
     .linkDirectionalParticles(2)
     .linkDirectionalParticleWidth(link => highlightLinks.has(link) ? 4 : 0)
@@ -139,7 +137,7 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
     // Function to zoom into a node
     function zoomIntoNode(node) {
         Graph.centerAt(node.x, node.y, 1000);
-        Graph.zoom(1.5, 1000) // Make this depend on the number of outgoing nodes?
+        Graph.zoom(1.5, 1000)
     }
 
     // Function to handle global click events
@@ -159,9 +157,9 @@ fetch('https://raw.githubusercontent.com/JayGupta797/course-network/main/graph.j
       const colors = [];
 
       for (let i = 0; i < n; i++) {
-        const hue = (i * (360 / n)) % 360; // Distribute hues evenly
-        const saturation = 50; // You can adjust this value
-        const lightness = 50; // You can adjust this value
+        const hue = (i * (360 / n)) % 360;  // Distribute hues evenly
+        const saturation = 50;
+        const lightness = 50;
 
         const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
         colors.push(color);
@@ -366,7 +364,7 @@ function getColumnValue(row, column) {
             case 'group':
                 return cells[3].textContent;
             default:
-                return ''; // Handle other columns if needed
+                return '';
         }
     }
 }
